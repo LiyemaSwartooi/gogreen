@@ -1,0 +1,147 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './animations.css';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply antialiased text-gray-900 bg-white;
+    overflow-x: hidden;
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+
+  /* Ensure root containers are responsive */
+  #root {
+    overflow-x: hidden;
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-emerald-500 ring-offset-2;
+  }
+}
+
+@layer components {
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-24;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Enhanced responsive utilities */
+  .mobile-full-width {
+    @apply w-full sm:w-auto;
+  }
+
+  .responsive-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .responsive-text {
+    @apply text-sm md:text-base lg:text-lg;
+  }
+
+  .responsive-heading {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .responsive-hero-heading {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  .responsive-grid-gap {
+    @apply gap-4 md:gap-6 lg:gap-8;
+  }
+
+  .responsive-section-padding {
+    @apply py-8 md:py-12 lg:py-20;
+  }
+
+  /* Ensure elements don't overflow on small screens */
+  .safe-area {
+    @apply overflow-hidden;
+  }
+
+  /* Button group styles for mobile */
+  .button-group-mobile {
+    @apply flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full;
+  }
+
+  /* Ensure content adapts to all screen sizes */
+  .adaptive-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Prevent horizontal overflow */
+  .overflow-safe {
+    @apply overflow-x-hidden;
+  }
+
+  /* Mobile-first responsive typography */
+  .responsive-text-sm {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+
+  /* Flexible grid for all devices */
+  .adaptive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  /* Touch-friendly spacing on mobile */
+  .touch-spacing {
+    @apply p-3 sm:p-4 md:p-6 lg:p-8;
+  }
+
+  /* Force responsive behavior */
+  .force-responsive {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure no elements exceed viewport width */
+  .constrain-width {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  /* Mobile container utility */
+  .mobile-container {
+    @apply w-full px-4 mx-auto max-w-7xl;
+  }
+}
+
+/* Dark mode overrides */
+.dark {
+  @apply bg-gray-900 text-gray-100;
+}
